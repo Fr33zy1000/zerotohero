@@ -42,7 +42,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="D:\Programming\FromZeroToHero-master\Suport curs -  ZeroToHero\ZeroToHeroWebApp - pasul 14\target/MANIFEST.MF" />
+        <element id="file-copy" path="D:\Programming\GitClone\zerotohero\zerohero\target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="ZeroToHeroWebApp/web/Web" />
     </root>

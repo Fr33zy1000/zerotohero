@@ -15,8 +15,9 @@ public class DepartamentService {
 
     @Autowired
     private DepartamentDao departamentDao;
+
     @Transactional
-    public Departament findAll() {
+    public List<Departament> findAll() {
         return departamentDao.findAll();
     }
 

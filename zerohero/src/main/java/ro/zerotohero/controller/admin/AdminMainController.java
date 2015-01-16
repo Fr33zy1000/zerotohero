@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ro.zerotohero.model.Departament;
 import ro.zerotohero.model.Employee;
 import ro.zerotohero.model.Role;
+import ro.zerotohero.service.DepartamentService;
 import ro.zerotohero.service.EmployeeService;
 import ro.zerotohero.service.RoleService;
 
@@ -25,6 +27,8 @@ public class AdminMainController {
 	private EmployeeService employeeService;
 	@Autowired
 	private RoleService roleService;
+	@Autowired
+	private DepartamentService departamentService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String index(ModelMap model) {
@@ -159,8 +163,23 @@ public class AdminMainController {
 
 		return "admin/newRole";
 	}
-	
-	
+
+//	@RequestMapping(value = "/listRole", method = RequestMethod.GET)
+//	public String listRole(ModelMap model) {
+//		List<Role> roleList = roleService.findAll();
+//		model.addAttribute("roleList", roleList);
+//		return "admin/listRole";
+//	}
+
+
+	@RequestMapping(value = "/listDepartament", method = RequestMethod.GET)
+	public String ListDepartament(ModelMap model) {
+		DepartamentService departament = new DepartamentService();
+		List<Departament> departamentList = departamentService.findAll();
+		model.addAttribute("Departament", departamentList);
+		return "admin/listDepartament";
+	}
+
 	
 
 }

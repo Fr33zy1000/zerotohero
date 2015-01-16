@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ro.zerotohero.model.Departament;
 
+import java.util.List;
+
 @Repository
 public class DepartamentDao {
     @Autowired
@@ -14,10 +16,17 @@ public class DepartamentDao {
 
     @SuppressWarnings("unchecked")
     @Transactional
-    public Departament findAll() {
+    public List<Departament> findAll() {
         Session session = sessionFactory.getCurrentSession();
-        Departament departament = (Departament) session.createQuery("from Departament")
-                .list();
+        List<Departament> departament =  session.createQuery(" from Departament").list();
+        return departament;
+    }
+
+    @Transactional
+    public Departament findById(int departamentId) {
+        Session session = sessionFactory.getCurrentSession();
+        Departament departament = (Departament) session.createQuery("from Departament where departamentId = :id").setParameter("id",
+                departamentId).uniqueResult();
         return departament;
     }
 }

@@ -23,6 +23,8 @@
 					<li><a href="#">Lista utilizatori</a></li>
 					<li><a href="<c:url value="/admin/listRole/"/>">Lista
 							roluri</a></li>
+					<li><a href="<c:url value="/admin//listDepartament/"/>">Lista
+							Departament</a></li>
 					<li><a href="<c:url value="/j_spring_security_logout"/>">Iesire</a></li>
 				</ul>
 			</div>

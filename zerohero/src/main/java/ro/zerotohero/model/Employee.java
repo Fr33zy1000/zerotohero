@@ -19,7 +19,8 @@ public class Employee implements Serializable {
 	private String email;
 	private String password;
 	private List<Role> roleList = new ArrayList<Role>();
-	private Departament departament = new Departament();
+//	private List<Departament> departamentList = new ArrayList<Departament>();
+	private Departament departament;
 
 	@ManyToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn (name = "DEPARTAMENT_ID", insertable = true, updatable = true, nullable = true)
@@ -30,6 +31,16 @@ public class Employee implements Serializable {
 	public void setDepartament (Departament departament){
 		this.departament = departament;
 	}
+
+//	@ManyToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+//	@JoinColumn (name = "DEPARTAMENT_ID", insertable = true, updatable = true, nullable = true)
+//	public Departament getDepartament(){
+//		return departament;
+//	}
+//
+//	public void setDepartament (Departament departament){
+//		this.departament = departament;
+//	}
 
 //	@ManyToOne(cascade =  , mappedBy = 'employee')
 //	public List<Departament> getDepartamentList() {

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ZeroToHeroWebApp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="zerotohero.war">
+      <element id="artifact" artifact-name="ZeroToHeroWebApp:war exploded" />
+    </root>
+  </artifact>
+</component>

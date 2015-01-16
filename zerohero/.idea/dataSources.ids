@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - zerohero@localhost" uuid="ee820823-dc90-4967-8419-b68568df1bcd">
+    <database-info product="MySQL" version="5.5.41" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="zerohero"/>
+    <table name="departament" schema="" catalog="zerohero" type="TABLE">
+      <column name="DEPARTAMENT_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="NAME" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="POSITION" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="DEPARTAMENT_ID"/>
+      <exported-key name="employee_ibfk_1" table="employee" schema="" catalog="zerohero" columns="DEPARTAMENT_ID"/>
+    </table>
+    <table name="employee" schema="" catalog="zerohero" type="TABLE">
+      <column name="EMPLOYEE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="FIRST_NAME" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="LAST_NAME" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="EMAIL" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DEPARTAMENT_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="EMPLOYEE_ID"/>
+      <foreign-key name="employee_ibfk_1" columns="DEPARTAMENT_ID" ref-table="departament" ref-schema="" ref-catalog="zerohero" ref-columns="DEPARTAMENT_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_7usl01i9200sje4tlk2w2qsi1" table="employee_role" schema="" catalog="zerohero" columns="EMPLOYEE_ID"/>
+    </table>
+    <table name="employee_departament" schema="" catalog="zerohero" type="TABLE">
+      <column name="EMPLOYEE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="DEPARTAMENT_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+    </table>
+    <table name="employee_role" schema="" catalog="zerohero" type="TABLE">
+      <column name="EMPLOYEE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ROLE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="FK_7usl01i9200sje4tlk2w2qsi1" columns="EMPLOYEE_ID" ref-table="employee" ref-schema="" ref-catalog="zerohero" ref-columns="EMPLOYEE_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_eina43l0053rr7hecn7341uvx" columns="ROLE_ID" ref-table="role" ref-schema="" ref-catalog="zerohero" ref-columns="ROLE_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_7usl01i9200sje4tlk2w2qsi1" unique="false" columns="EMPLOYEE_ID"/>
+      <index name="FK_eina43l0053rr7hecn7341uvx" unique="false" columns="ROLE_ID"/>
+    </table>
+    <table name="role" schema="" catalog="zerohero" type="TABLE">
+      <column name="ROLE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="NAME" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="AUTHORITY" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ROLE_ID"/>
+      <exported-key name="FK_eina43l0053rr7hecn7341uvx" table="employee_role" schema="" catalog="zerohero" columns="ROLE_ID"/>
+    </table>
+  </data-source>
+</component>

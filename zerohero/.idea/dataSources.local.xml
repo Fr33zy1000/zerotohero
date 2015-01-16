@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - zerohero@localhost" uuid="ee820823-dc90-4967-8419-b68568df1bcd">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>zerohero.*</schema-pattern>
+      <default-schemas>zerohero.*</default-schemas>
+    </data-source>
+  </component>
+</project>
